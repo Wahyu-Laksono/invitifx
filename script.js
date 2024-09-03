@@ -1,3 +1,24 @@
+ window.addEventListener("load", function() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        });
+
+        // Optional: Exit fullscreen when pressing the escape key
+        document.addEventListener("fullscreenchange", function() {
+            if (!document.fullscreenElement) {
+                console.log("Exited fullscreen mode");
+            }
+        });
+
+
+
 //page1 onclick
 function tampilkanHalaman() {
     document.getElementById('page1').classList.add('projectku');
