@@ -1,0 +1,1018 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --warnapenting: rgb(237, 148, 22);
+    --warnapenting2: rgb(103, 55, 9);
+    --warnaumum: rgb(247, 242, 242);
+}
+
+@font-face {
+    font-family: 'jawa';
+    src: url(asset/font-face/Upakarti\ Serong.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'jawabatik';
+    src: url(asset/font-face/BatikBlend-JpGAn.ttf) format(truetype);
+}
+
+body {}
+
+/* page1 awal  */
+.page1 {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    display: flex;
+    z-index: 999;
+    position: relative;
+    box-sizing: border-box;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+
+}
+
+/* 
+@keyframes fade {
+    0% {
+        opacity: .8;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    67% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .8;
+    }
+} */
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: none;
+    z-index: -1
+}
+
+.page1 .dear {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.dear h5 {
+    font-family: "Dancing Script", Berkshire Swash, cursive;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.dear h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 3.5rem !important;
+    margin-bottom: 30px;
+    margin-top: 0;
+    color: var(--warnapenting);
+    text-shadow: -2px -2px var(--warnaumum);
+}
+
+.dear .kepada {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kepada p:nth-child(1) {
+    margin: 0;
+    font-family: "lora", serif;
+    font-size: 1.1rem;
+}
+
+.kepada p:nth-child(2) {
+    font-family: "lora", serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.dear button {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 5px;
+    color: var(--warnaumum);
+    background-color: var(--warnapenting);
+    width: 200px;
+    height: 30px;
+    overflow: hidden;
+    padding-bottom: 3px;
+    box-shadow: 1px 1px 3px 1px var(--warnaumum);
+}
+
+button .svg {
+    margin-right: 20px;
+}
+
+/* page 1 akhir */
+/* ----------------------------------------------------- */
+
+/* projectku awal */
+.projectku {
+    padding: 0;
+    margin: 0;
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* home */
+.home {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    z-index: 900;
+    position: relative;
+}
+
+.imggalungan img {
+    -webkit-object-fit: contain;
+    -moz-object-fit: contain;
+    -o-object-fit: contain;
+    object-fit: contain;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.overlayhome {
+    background-color: rgba(0, 0, 0, .6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    67% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.home .bghome1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fade 9s ease-in-out infinite alternate;
+    z-index: -1
+}
+
+.bghome1 img:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.bghome1 img:nth-of-type(2) {
+    animation-delay: 3s;
+}
+
+.bghome1 img:nth-of-type(1) {
+    animation-delay: 6s;
+}
+
+
+.home .dearhome {
+    width: 100%;
+    height: 100%;
+    color: white;
+    position: inherit;
+    z-index: 20;
+    overflow: hidden;
+    animation: all 1s ease-in;
+}
+
+@keyframes all {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.galunganornamen {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.galunganornamen img {
+    position: relative;
+    -webkit-object-fit: contain;
+    -moz-object-fit: contain;
+    -o-object-fit: contain;
+    object-fit: contain;
+    height: 240px;
+    /* border: 1px solid white; */
+}
+
+.galunganornamen img:nth-child(1) {
+    margin-left: -45px;
+    margin-bottom: -40px;
+}
+
+.galunganornamen img:nth-child(2) {
+    height: 50px;
+}
+
+.galunganornamen img:nth-child(3) {
+    margin-right: -45px;
+    margin-bottom: -40px;
+}
+
+.namaweddhome {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    position: absolute;
+    z-index: 13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 100px;
+    padding: 30px 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.namaweddhome h5:nth-child(1) {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    /* border: 1px solid white;; */
+}
+
+.namaweddhome h5:nth-child(2) {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2.5rem;
+    margin-bottom: 350px;
+    /* border: 1px solid white; */
+}
+
+.namaweddhome .namacp {
+    margin-bottom: 180px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.namacp h1 {
+    font-family: 'jawabatik';
+    font-size: 4.5rem;
+    color: var(--warnapenting);
+    width: 100%;
+    text-shadow: 2px 2px var(--warnaumum);
+}
+
+.namacp h1:nth-child(2) {
+    margin: 0 10px;
+}
+
+.namaweddhome p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+/* home akhir */
+/* ------------------------------------------ */
+/* couple awal */
+.couple {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    overflow: hidden;
+}
+
+.couple .imgcouple img {
+    /* border: 1px solid seashell; */
+    -webkit-object-fit: contain;
+    -moz-object-fit: contain;
+    -o-object-fit: contain;
+    object-fit: contain;
+    position: static;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.couple .sambutan {
+    /* border: 1px solid seashell; */
+    text-align: center;
+    padding: 0 5px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: .99rem;
+    color: var(--warnapenting2);
+}
+
+.couple .card {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 85%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: 70px;
+}
+
+/* ---------------------cpw----------------------- */
+.card .card1cpw {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 3px 1px var(--warnaumum);
+    background-color: var(--warnapenting2);
+}
+
+.imgcpw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card1cpw .imgcpw .fotocpw {
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    background-image: url(asset/image/IMG_8046.JPG);
+    background-size: cover;
+    background-position-y: -40px;
+}
+
+.imgcpw .cpwornamen {
+    /* border: 1px solid white; */
+    z-index: 1;
+    width: 87%;
+    height: 70px;
+    margin-top: -125px;
+    background-image: url(asset/image/coupleornamen.svg);
+    background-size: cover !important;
+}
+
+.card1cpw h1 {
+    /* border: 1px solid white; */
+    padding: 10px 0;
+    font-family: "jawabatik", Dancing Script, Berkshire Swash;
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+.card1cpw a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    margin: auto;
+    margin-top: -5px;
+    line-height: 30px;
+}
+
+.card1cpw a img {
+    position: static;
+    max-width: 20px;
+    max-height: 20px;
+    margin: auto;
+
+}
+
+.card1cpw p {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.1rem !important;
+}
+
+/* --------------------------cpp--------------------------- */
+.card .card1cpp {
+    margin-top: 105px;
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 3px 1px var(--warnaumum);
+    background-color: var(--warnapenting2);
+}
+
+.imgcpp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card1cpp .imgcpp .fotocpp {
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    background-image: url(asset/image/IMG_7988.JPG);
+    background-size: cover;
+    background-position-y: -115px;
+}
+
+.imgcpp .cppornamen {
+    /* border: 1px solid white; */
+    z-index: 1;
+    width: 87%;
+    height: 70px;
+    margin-top: -125px;
+    background-image: url(asset/image/coupleornamen.svg);
+    background-size: cover !important;
+}
+
+.card1cpp h1 {
+    /* border: 1px solid white; */
+    padding: 10px 0;
+    font-family: "jawabatik", Dancing Script, Berkshire Swash;
+    font-size: 2.2rem;
+    margin-bottom: 0;
+}
+
+.card1cpp a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    margin: auto;
+    margin-top: -5px;
+    line-height: 30px;
+}
+
+.card1cpp a img {
+    position: static;
+    max-width: 20px;
+    max-height: 20px;
+    margin: auto;
+
+}
+
+.card1cpp p {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.1rem !important;
+}
+
+/* couple akhir */
+/* -------------------------------------------- */
+/* event awal */
+.event {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: var(--warnapenting2);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.event .waktumundur p {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2rem;
+}
+
+/* ------------------------------- */
+/* card akad awal */
+.event .card1akad {
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--warnapenting2);
+    width: 94%;
+    height: auto;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.card1akad .imgcincin {
+    /* border: 1px solid red; */
+    margin: 10px auto;
+    width: 80px;
+    height: auto;
+}
+
+.card1akad .imgcincin img {
+    position: static;
+}
+
+.card1akad h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2.5rem;
+}
+
+.card1akad p {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.2rem;
+}
+
+.card1akad a {
+    margin: auto;
+    width: 65px;
+    height: auto;
+}
+
+.card1akad a img {
+    position: static;
+}
+
+.card1akad .p p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card1akad h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+/* card akad akhir */
+/* ---------------------------------------------------- */
+/* card2 akad awal */
+.event .card2akad {
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--warnapenting2);
+    width: 94%;
+    height: auto;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.card2akad .img2cincin {
+    /* border: 1px solid red; */
+    margin: 10px auto;
+    width: 65px;
+    height: auto;
+}
+
+.card2akad .img2cincin img {
+    position: static;
+}
+
+.card2akad h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2.5rem;
+}
+
+.card2akad p {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.2rem;
+}
+
+.card2akad a {
+    margin: auto;
+    width: 65px;
+    height: auto;
+}
+
+.card2akad a img {
+    position: static;
+}
+
+.card2akad .p2 p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card2akad h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+/* card 2 akad akhir */
+/* ----------------------------------- */
+/* card 3 akad awal */
+.event .card3akad {
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--warnapenting2);
+    width: 94%;
+    height: auto;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.card3akad .img3cincin {
+    /* border: 1px solid red; */
+    margin: 10px auto;
+    width: 80px;
+    height: auto;
+}
+
+.card3akad .img3cincin img {
+    position: static;
+}
+
+.card3akad h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2.5rem;
+}
+
+.card3akad p {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.2rem;
+}
+
+.card3akad a {
+    margin: auto;
+    width: 65px;
+    height: auto;
+}
+
+.card3akad a img {
+    position: static;
+}
+
+.card3akad .p3 p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card3akad h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+/* card 3 akad akhir */
+/* peta awal */
+.event .peta {
+    /* border:  1px solid white; */
+    width: 94%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.peta h1 {
+    font-family: "Berkshire Swash", serif;
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.peta iframe {
+    width: 90%;
+}
+
+.peta h2 {
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.3rem;
+}
+
+.peta a {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    line-height: 40px;
+    color: var(--warnapenting2);
+    font-family: "lora", Poppins, roboto;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* peta akhir */
+/* event akhir */
+/* ------------------------------------------------ */
+/* gallery awal */
+.gallery {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: auto;
+    padding: 20px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery h1{
+    font-family: "Berkshire Swash", serif;
+    font-size: 2rem;
+}
+.carousel-inner{
+    /* border: 1px solid red; */
+    height: 600px;
+}
+.carousel{
+    display: flex!important;
+    flex-direction: column!important;
+    justify-content: space-evenly!important;
+    align-items: center!important;
+}
+
+.carousel-item{
+    height: 600px;
+
+}
+.carousel-item img{
+    object-fit: cover!important;
+}
+
+.carousel-item img{
+    position: static;
+}
+.carousel-indicators img{
+   position: static;
+   width: 123px;
+   height: 80px;
+   display: block;
+
+}
+.carousel-indicators button{
+    width: max-content!important;
+    margin: 0!important;
+}
+.carousel-indicators {
+    position: relative!important;
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 0px;
+    margin: auto!important;
+
+}
+
+.carousel-indicators button.active img{
+    border: 3px solid var(--warnapenting2);
+}
+/* gallery akhir */
+/* wishes awal */
+.wishes{
+    width: 100%;
+    height: 100vh;
+    border: 2px solid red; 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 0;
+}
+.wishes h1{
+    font-family: "Berkshire Swash", serif;
+    font-size: 2rem;
+    color: var(--warnapenting2);
+
+}
+.wishes form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+    width: 96%;
+    height:auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--warnaumum);
+}
+
+form label{
+    font-family: "lora", Poppins, roboto;
+    font-size: 1.1rem;
+    color: var(--warnapenting2);
+}
+form input {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+form textarea{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+form select {
+    background-color: var(--warnapenting2);
+    color: var(--warnaumum);
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+form button{
+    background-color: var(--warnapenting2)!important;
+    margin-bottom: 10px;
+}
+
+/* wishes akhir */
+
+
+
+/* nav awal */
+.nav {
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    bottom: 10px;
+    z-index: 888;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    /* box-sizing: border-box; */
+    /* overflow: hidden; */
+    background-color: transparent;
+    position: sticky !important;
+    bottom: 1px;
+    z-index: 999 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul {
+    width: 94%;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: none;
+    background-color: var(--warnaumum);
+    border-radius: 10px;
+    box-shadow: 0 -1px 10px 0 #979797;
+}
+
+.nav ul li {
+    list-style: none;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.nav ul li:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    /* color: white; */
+    overflow: hidden;
+}
+
+.nav ul li a svg {
+    padding-top: 5px;
+    margin: 0;
+    color: var(--warnapenting2);
+}
+
+.nav ul li a p {
+    margin: 0;
+    color: var(--warnapenting2);
+    padding-bottom: 5px;
+}
+
+/* nav akhir */
+/* audio awal */
+.icon {
+    position: sticky;
+    bottom: 100px;
+    z-index: 998;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+#iconImage {
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    animation: none;
+    display: inline-block;
+}
+/* audio akhir */
+
+/* query media */
+/* min-width: 768px (untuk setting ukuran layar 768px ke atas */
+@media only screen and (min-width:768px) {
+    .nav {
+        display: none;
+    }
+}
+
+/* max-width: 768px (untuk setting ukuran layar 768px ke bawah/ HANDPHONE */
+@media only screen and (max-width:768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .page1 .dear {}
+
+    .page1 .dear h1 {
+        font-size: 5rem;
+
+    }
+}
+
+/* query media akhir */
+/* projecku akhir */
