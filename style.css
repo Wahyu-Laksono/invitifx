@@ -3,33 +3,6 @@
     margin: 0;
     scroll-behavior: smooth;
 }
-/* // mixiin */
-/* @mixin hp320px {
-    @media (min-width: 320px) {
-        @content;
-    }
-}
-@mixin hp375px {
-    @media (min-width: 375px) {
-        @content;
-    }
-}
-@mixin hp425px {
-    @media (min-width: 425px) {
-        @content;
-    }
-} */
-
-/* // penggunaan mixin untuk media query
-// .conten{
-//     font....
-//     width....
-//     height.....
-//     @include hp320px{
-//         isinya apa
-//     }
-    
-// } */
 
 :root {
     --warnapenting: rgb(237, 148, 22);
@@ -342,33 +315,35 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding-top: 100px;
+    justify-content: space-around;
     padding: 30px 0 !important;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .namaweddhome h5:nth-child(1) {
     font-family: "Poppins", sans-serif;
     font-size: 1.5rem;
+    margin: 0;
+    padding-top: 40px;
     /* border: 1px solid white;; */
 }
 
 .namaweddhome h5:nth-child(2) {
     font-family: "Berkshire Swash", serif;
     font-size: 2.5rem;
-    margin-bottom: 350px;
+    margin-top: 0;
+    padding-bottom: 410px;
+    /* margin-bottom: 300px; */
     /* border: 1px solid white; */
 }
 
 .namaweddhome .namacp {
-    margin-bottom: 180px;
+    margin-bottom: px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .namacp h1 {
+    margin-bottom: 40px;
     font-family: 'jawabatik';
     font-size: 4.5rem;
     color: var(--warnapenting);
@@ -383,6 +358,7 @@ img {
 .namaweddhome p {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
+    margin-bottom: -30px;
 }
 
 /* home akhir */
@@ -465,11 +441,12 @@ img {
 .imgcpw .cpwornamen {
     /* border: 1px solid white; */
     z-index: 1;
-    width: 87%;
-    height: 70px;
-    margin-top: -125px;
+    width: 270px;
+    height: 56px !important;
+    margin-top: -115px;
     background-image: url(asset/image/coupleornamen.svg);
     background-size: cover !important;
+    background-position: center;
 }
 
 .card1cpw h1 {
@@ -536,11 +513,12 @@ img {
 .imgcpp .cppornamen {
     /* border: 1px solid white; */
     z-index: 1;
-    width: 87%;
-    height: 70px;
-    margin-top: -125px;
+    width: 270px;
+    height: 56px !important;
+    margin-top: -115px;
     background-image: url(asset/image/coupleornamen.svg);
     background-size: cover !important;
+    background-position: center;
 }
 
 .card1cpp h1 {
@@ -976,6 +954,9 @@ form button {
     padding: 5px;
     color: var(--warnapenting2);
     background-color: var(--warnaumum);
+    background-image: url(asset/image/bgamplop1.jpg);
+    background-position: center;
+    background-size: cover;
     border-radius: 10px;
 }
 .amplop1 .logobri{
@@ -1012,7 +993,7 @@ form button {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
 .modal-content {
@@ -1021,6 +1002,7 @@ form button {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: 100px;
     max-width: 300px;
     text-align: center;
 }
@@ -1048,6 +1030,10 @@ form button {
     padding: 5px;
     color: var(--warnapenting2);
     background-color: var(--warnaumum);
+    background-image: url(asset/image/bgamplop2.jpg);
+    background-position: center;
+    background-size: cover;
+
     border-radius: 10px;
 }
 .amplop2 .logobri{
@@ -1056,7 +1042,7 @@ form button {
 }
 .amplop2 .logobpd img{
     position: static;
-    width: 40%;
+    width: 55%;
 }
 .amplop2 p{
     margin: 0;
@@ -1295,6 +1281,131 @@ nav {
 
     }
 }
+@media only screen and (max-width:320px) {
+    /* gambar home */
+    .galunganornamen img:nth-child(1){
+        height: 180px;
+    }
+    .galunganornamen img:nth-child(2) {
+        height: 35px;
+        width: 230px;
+    }
+    .galunganornamen img:nth-child(3){
+        height: 180px;
+    }
+    /* gambar home akhir */
+    /* gambar couple */
+    .imgcpw .cpwornamen {
+        height: 55px;
+    }
+    .imgcpp .cppornamen {
+        height: 55px;
+    }
+    /* gambar couple akhir */
+}
 
+@media only screen and (min-width:320px) {
+    /* gambar home */
+    .galunganornamen img:nth-child(1){
+        height: 180px;
+    }
+    .galunganornamen img:nth-child(2) {
+        height: 35px;
+        width: 230px;
+    }
+    .galunganornamen img:nth-child(3){
+        height: 180px;
+    }
+      /* gambar home akhir */
+
+    /* gambar couple */
+    .imgcpw .cpwornamen {
+        height: 55px;
+    }
+    .imgcpp .cppornamen {
+        height: 55px;
+    }
+    /* gambar couple akhir */
+    
+    /* hitung waktu mundur */
+    .event .waktumundur p{
+        font-size: 1.8rem;
+    }
+    /* hotung minudur akhir */
+
+    /* tgl acara home*/
+    .namaweddhome p{
+        margin-bottom: -30px;
+    }
+    /* tgl acara home akhir */
+}
+
+@media only screen and (min-width:375px) {
+    /* gambar home */
+    .galunganornamen img:nth-child(1){
+        height: 210px;
+    }
+    .galunganornamen img:nth-child(2) {
+        height: 40px;
+        width: 250px;
+    }
+    .galunganornamen img:nth-child(3){
+        height: 210px;
+    }
+      /* gambar home akhir */
+
+    /* gambar couple */
+    .imgcpw .cpwornamen {
+        height: 64px;
+    }
+    .imgcpp .cppornamen {
+        height: 64px;
+    }
+    /* gambar couple akhir */
+    
+    /* hitung waktu mundur */
+    .event .waktumundur p{
+        font-size: 2rem;
+    }
+      /* hotung minudur akhir */
+
+    /* tgl acara home*/
+    .namaweddhome p{
+        margin-bottom: 15px;
+    }
+    /* tgl acara home akhir */
+}
+
+
+@media only screen and (min-width:425px) {
+    /* gambar home */
+    .galunganornamen img:nth-child(1){
+        height: 250px;
+    }
+    .galunganornamen img:nth-child(2) {
+        height: 60px;
+        width: 250px;
+    }
+    .galunganornamen img:nth-child(3){
+        height: 250px;
+    }
+      /* gambar home akhir */
+
+    /* gambar couple */
+    .imgcpw .cpwornamen {
+        height: 73px;
+        width: 
+    }
+    .imgcpp .cppornamen {
+        height: 73px;
+    }
+    /* gambar couple akhir */
+
+    /* tgl acara home*/
+    .namaweddhome p{
+        margin-bottom: 20px;
+    }
+    /* tgl acara home akhir */
+}
 /* query media akhir */
 /* projecku akhir */
