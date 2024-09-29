@@ -1,13 +1,17 @@
+<?php
+  // Connect to the database
+  $conn = mysqli_connect("localhost", "root", "", "daftartamu");
+?>
+
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google" content="notranslate">
-     <!-- AOS  -->
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <link rel="stylesheet" href="style.css">
 
@@ -37,11 +41,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   
 
-    <title>Wisnu & Rosa - Wedding Invitation</title>
+        <title>Wisnu & Rosa - Wedding Invitation</title>
 </head>
-
 <body>
     <!-- page1 -->
     <div id="page1" class="page1">
@@ -55,7 +57,40 @@
             <div class="bawahdear">
                 <div class="kepada">
                     <p>Kepada Yth.</p>
-                    <p> Dimas Anang Saputri</p>
+                    <!-- script php untuk custom url dan nama penerima -->
+                    <?php
+                     if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                      }
+                    
+                      // Get the recipient's ID from the URL parameter
+                      $nama = $_GET['nama'];
+                    
+                      // Retrieve the recipient's name from the database
+                      $query = "SELECT nama FROM tamuwisnu WHERE nama = '$nama'";
+                      $result = mysqli_query($conn, $query);
+                    
+                      // Check if the query was successful
+                      if ($result) {
+                        if (mysqli_num_rows($result) > 0) {
+                            $row = mysqli_fetch_assoc($result);
+                            $name = $row['nama'];
+                        } else {
+                            $nama = 'Guest';
+                        }
+                    } else {
+                        // Menangani kesalahan query
+                        echo "Error: " . mysqli_error($conn);
+                        $nama = 'Tamu';
+                    }
+
+                    // Close the database connection
+                      mysqli_close($conn);
+                    
+                      // Display the recipient's name on the invitation page
+                      echo "<h1 style='color: white; font-family: Arial, Helvetica, sans-serif; font-size: 1.8rem; font-weight: bold;'>$nama</h1>";
+                    ?>
+                    <!-- script php untuk custom url dan nama penerima -->
                 </div>
                 <button onclick="tampilkanHalaman()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -103,18 +138,18 @@
         </div>
         <!-- home akhir -->
         <!-- couple awal -->
-        <div class="couple" id="couple">
+        <div class="couple animation-container" id="couple">
             <!-- bismillah -->
-            <div class="imgcouple">
+            <div class="imgcouple animate-element">
                 <img src="asset/image/bismillah.png" alt="bismillahirrahmanirrahim">
             </div>
             <!-- kata2 -->
-            <div class="sambutan">
+            <div class="sambutan animate-element">
                 <p>Dengan Memohon Rahmat Dan Ridho Allah SWT, <br> Kami Akan Menyelenggarakan <br> Acara Pernikahan
                     :</p>
             </div>
-            <div class="card">
-                <div class="card1cpw">
+            <div class="card animation-container">
+                <div class="card1cpw animate-element">
                     <div class="imgcpw">
                         <div class="fotocpw"></div>
                         <div class="cpwornamen"></div>
@@ -125,7 +160,7 @@
                     </a>
                     <P>Putri dari Bapak Ir. Fauzan<br>dan Ibu Ir. Siti Wartiningsih, M.Pd.</P>
                 </div>
-                <div class="card1cpp">
+                <div class="card1cpp animate-element">
                     <div class="imgcpp">
                         <div class="fotocpp"></div>
                         <div class="cppornamen"></div>
@@ -140,14 +175,14 @@
         </div>
         <!-- couple akhir -->
         <!--event awal  -->
-        <div class="event" id="event">
+        <div class="event animation-container" id="event">
             <!-- simplycountdown -->
-            <div class="waktumundur">
+            <div class="waktumundur animate-element">
                 <p>Hitung Waktu Mundur</p>
                 <div class="simply-countdown"></div>
             </div>
             <!-- akad awal -->
-            <div class="card1akad">
+            <div class="card1akad animate-element">
                 <!-- gambar cincin -->
                 <div class="imgcincin">
                     <img src="asset/image/ringlove.svg" alt="ringlove">
@@ -164,7 +199,7 @@
             </div>
             <!-- akad akhir -->
             <!-- adat awal -->
-            <div class="card2akad">
+            <div class="card2akad animate-element">
                 <!-- gambar cincin -->
                 <div class="img2cincin">
                     <img src="asset/image/galungan_utama.png" alt="ringlove">
@@ -181,7 +216,7 @@
             </div>
             <!-- adat akhir -->
             <!-- resepsi awal -->
-            <div class="card3akad">
+            <div class="card3akad animate-element">
                 <!-- gambar cincin -->
                 <div class="img3cincin">
                     <img src="asset/image/bucket.svg" alt="ringlove">
@@ -198,25 +233,25 @@
             </div>
             <!-- resepsi akhir -->
             <!-- peta awal -->
-            <div class="peta" data-aos="fade-up-right" data-aos-duration="2000">
-                <h1 class="petah1">Peta Lokasi Acara</h1>
+            <div class="peta animation-container" data-aos="fade-up-right" data-aos-duration="2000">
+                <h1 class="petah1 animate-element">Peta Lokasi Acara</h1>
                 <!-- tampilkan google maps -->
-                <iframe
+                <iframe class="animate-element"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.096168573139!2d109.681140654417!3d-6.87908121112009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7025bf93ea9e63%3A0x493534180f4ac9f1!2sGedung%20Pertemuan%20%22%20AMAN%20-%20JIBA%20%22!5e0!3m2!1sid!2sid!4v1724776448780!5m2!1sid!2sid"
                     width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <!-- google maps akhir -->
-                <h2>Gedung Aman Jiba Kota Pekalongan</h2>
-                <a href="https://maps.app.goo.gl/HTVwsqd6b4oqegvC8">
+                <h2 class="animate-element">Gedung Aman Jiba Kota Pekalongan</h2>
+                <a class="animate-element" href="https://maps.app.goo.gl/HTVwsqd6b4oqegvC8">
                     Buka Maps</a>
             </div>
             <!-- peta lokasi akhir -->
         </div>
         <!-- event akhir -->
         <!-- gallery awal -->
-        <div class="gallery" id="gallery">
-            <h1>Gallery</h1>
-            <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
+        <div class="gallery animation-container" id="gallery">
+            <h1 class="animate-element">Gallery</h1>
+            <div class="carousel slide animate-element" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
                         <img src="asset/image/IMG_7926.JPG" alt="1" class="w-100">
@@ -274,7 +309,7 @@
                     <!-- <span class="carousel-control-next-icon"></span> -->
                 </button>
 
-                <div class="carousel-indicators">
+                <div class="carousel-indicators animate-element">
                     <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0">
                         <img src="asset/image/IMG_7926.JPG" alt="foto mempelai">
                     </button>
@@ -308,7 +343,7 @@
                     </button>
 
                     <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="8">
-                        <img src="asset/image/IMG_7834.JPG"alt="foto mempelai">
+                        <img src="asset/image/IMG_7834.JPG" alt="foto mempelai">
                     </button>
 
                     <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="9">
@@ -347,14 +382,14 @@
         </div>
         <!-- gallery akhir -->
         <!-- wishes awal -->
-        <div class="wishes" id="wishes">
-            <h1>Kehadiran</h1>
+        <div class="wishes animation-container" id="wishes">
+            <h1 class="animate-element">Kehadiran</h1>
             <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
                 <strong>Terimakasih!</strong> pesan anda sudah kami terima.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
-            <form name="RSVP-Wedding-Rosa&Wisnu" action="your-server-endpoint" method="post">
+            <form name="RSVP-Wedding-Rosa&Wisnu" action="your-server-endpoint" method="post" class="animate-element">
                 <label for="name">Nama Lengkap</label>
                 <input type="text" id="name" name="nama" required>
 
@@ -380,15 +415,15 @@
             <div class="penutup">
                 <div class="bgpenutup">
                     <div class="tulisanamplop">
-                        <h1>Amplop Digital</h1>
-                        <p>Doa restu anda merupakan karunia yang sangat
+                        <h1 class="animate-element">Amplop Digital</h1>
+                        <p class="animate-element">Doa restu anda merupakan karunia yang sangat
                             berarti bagi kami. Dan jika memberi adalah
                             ungkapan tanda kasih anda,
                             anda dapat
                             memberi kado secara cashless
                         </p>
                     </div>
-                    <div  class="amplop">
+                    <div class="amplop animate-element">
                         <div class="amplop1">
                             <div class="logobri">
                                 <img src="asset/image/logo_bri.svg" alt="logo BRI">
@@ -407,7 +442,7 @@
                             </div>
                             <h5>An. WISNU ARI SAPUTRA</h5>
                         </div>
-                        <div class="amplop2">
+                        <div class="amplop2 animate-element">
                             <div class="logobpd">
                                 <img src="asset/image/BankJatengLogo.svg" alt="logo BPD">
                             </div>
@@ -427,21 +462,22 @@
                         </div>
                     </div>
                     <!-- amplop akhir -->
-                    <div class="katapenutup">
-                        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/iberkenan hadir untuk memberikan doa restu kepada kedua mempelai.
-                           <br>
+                    <div class="katapenutup animation-container">
+                        <p class="animate-element">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/iberkenan
+                            hadir untuk memberikan doa restu kepada kedua mempelai.
+                            <br>
                             <br>Wassalamu'alaikum Warahmatullahi Wabarakatuh
                             <br>
                             <br>Turut berbahagia, Segenap keluarga besar
                         </p>
-                        <div class="garispenutup">
+                        <div class="garispenutup animate-element">
                             <img src="asset/image/garis penutup.svg" alt="garis love">
                         </div>
                     </div>
-                   
+
                 </div>
                 <div class="boxradius">
-                    <h1>Wisnu & Rosa</h1>
+                    <h1 class="animate-element">Wisnu & Rosa</h1>
                 </div>
             </div>
             <!-- penutup akhir -->
@@ -552,11 +588,15 @@
     -->
     <!-- AOS SCRIPT -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>       
-       AOS.init({
+    <script>
+        AOS.init({
             once: true,
         });
     </script>
+
+    <!-- Intersection Observer  -->
+    <script src="intersectionObserver.js"></script>
+    <!-- Intersection Observer akhir -->
 
     <script src="script.js"></script>
 
@@ -692,6 +732,20 @@
                 })
                 .catch(error => console.error('Error!', error.message));
         });
+
+        // url parameter js
+        // Get the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('nama');
+
+        // Send an AJAX request to the PHP script to retrieve the recipient's name
+        fetch(`https://example.com/undangan?nama=${nama}`)
+            .then(response => response.text())
+            .then(nama => {
+                // Update the invitation page with the recipient's name
+                document.querySelector('h1').innerHTML = `Undangan untuk ${nama}`;
+            });
+            // url parameter akhir
     </script>
 </body>
 
