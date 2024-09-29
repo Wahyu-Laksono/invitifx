@@ -20,6 +20,19 @@
     src: url(asset/font-face/BatikBlend-JpGAn.ttf) format(truetype);
 }
 
+
+/* animasi All  */
+.animate-element{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s, transform 2s;
+}
+.animate-element.animate{
+    opacity: 1;
+    transform: translateX(0);
+}
+/* animasi ALL akhir */
+
 /* page1 awal  */
 .page1 {
     width: 100%;
@@ -60,7 +73,6 @@
     left: 0;
     position: absolute;
     z-index: 10;
-
 }
 
 /* 
@@ -1394,7 +1406,6 @@ nav {
     /* gambar couple */
     .imgcpw .cpwornamen {
         height: 73px;
-        width: 
     }
     .imgcpp .cppornamen {
         height: 73px;
