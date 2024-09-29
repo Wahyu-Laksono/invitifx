@@ -72,3 +72,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     observer.observe(projectku);
 });
+
+
+const animationContainer = document.querySelector('.animation-container');
+const animateElements = document.querySelectorAll('.animate-element');
+
+// intersection observer 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, {
+    rootMargin: '0px',
+});
+
+animateElements.forEach((element) => {
+    observer.observe(element);
+});
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    animateElements.forEach((element) => {
+        const elementTop = element.offsetTop;
+        const elementHeight = element.offsetHeight;
+        if (scrollPosition >= elementTop - window.innerHeight / 2 && scrollPosition <= elementTop + elementHeight) {
+            element.classList.add('animate');
+        }
+    });
+});
